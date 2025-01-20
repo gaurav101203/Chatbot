@@ -2,13 +2,13 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import google.generativeai as genai
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from flask_cors import CORS
 
 
 
 # Load API key from .env file
-load_dotenv()
+# load_dotenv()
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Ensure your .env file contains this variable
 
 # Configure the genai module
