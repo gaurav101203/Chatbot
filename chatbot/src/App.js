@@ -5,12 +5,11 @@ import './App.css';
 function App() {
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
-  const messagesEndRef = useRef(null);  // Ref to track the end of the message list
+  const messagesEndRef = useRef(null); 
 
   const sendMessage = async () => {
     if (!userInput) return;
 
-    // Add user message to chat history
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: userInput, sender: 'user' },
@@ -37,7 +36,7 @@ function App() {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      event.preventDefault();  // Prevent the default behavior (e.g., form submission)
+      event.preventDefault(); 
       sendMessage();
     }
   };
@@ -68,7 +67,7 @@ function App() {
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
-            onKeyDown={handleKeyDown} // Add the keydown event listener
+            onKeyDown={handleKeyDown} 
             placeholder="Type a message..."
           />
           <button onClick={sendMessage}>Send</button>
